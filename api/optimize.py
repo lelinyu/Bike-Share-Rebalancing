@@ -1,16 +1,35 @@
 from http.server import BaseHTTPRequestHandler
 import json
+from pathlib import Path
 # Import OR-Tools and your routing logic here...
 
 class handler(BaseHTTPRequestHandler):
 
     def do_GET(self):
-        """Handle standard browser requests gracefully."""
+        """Serve the UI on root path and JSON status elsewhere."""
+        if self.path in ('/', '/index.html'):
+            index_path = Path(__file__).resolve().parent.parent / 'index.html'
+            try:
+                html = index_path.read_text(encoding='utf-8')
+                self.send_response(200)
+                self.send_header('Content-type', 'text/html; charset=utf-8')
+                self.end_headers()
+                self.wfile.write(html.encode('utf-8'))
+                return
+            except OSError:
+                self.send_response(500)
+                self.send_header('Content-type', 'application/json')
+                self.end_headers()
+                self.wfile.write(json.dumps({
+                    'error': 'Could not load index.html'
+                }).encode('utf-8'))
+                return
+
         self.send_response(200)
         self.send_header('Content-type', 'application/json')
         self.end_headers()
         self.wfile.write(json.dumps({
-            'status': 'API is running successfully!', 
+            'status': 'API is running successfully!',
             'message': 'Please send POST requests with truck parameters to calculate routes.'
         }).encode('utf-8'))
     
