@@ -51,9 +51,9 @@ class handler(BaseHTTPRequestHandler):
         base_dir = os.path.dirname(os.path.abspath(__file__))
         
         try:
-            with open(os.path.join(base_dir, 'westside_time_matrix.json'), 'r') as f:
+            with open(os.path.join(base_dir, 'matrix.json'), 'r') as f:
                 time_matrix = json.load(f)
-            with open(os.path.join(base_dir, 'station_flux.json'), 'r') as f:
+            with open(os.path.join(base_dir, 'stations.json'), 'r') as f:
                 stations = json.load(f)
         except Exception as e:
             self.send_error(500, f"Error loading data files: {str(e)}")
