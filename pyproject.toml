@@ -7,6 +7,3 @@ dependencies = [
     "ortools==9.8.3296",
     "numpy"
 ]
-
-[tool.vercel]
-entrypoint = "api.optimize:handler"
