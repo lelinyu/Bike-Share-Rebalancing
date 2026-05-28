@@ -38,11 +38,29 @@
             
             const data = await response.json();
             
-            // Draw the returned coordinates on the map
-            // Note: Leaflet expects [Lat, Lon]
-            const latLngs = data.route.map(coord => [coord[1], coord[0]]);
-            L.polyline(latLngs, {color: '#00e676', weight: 4}).addTo(map);
-            map.fitBounds(L.polyline(latLngs).getBounds());
+            // Clear any old lines off the map first
+            map.eachLayer((layer) => {
+                if (layer instanceof L.Polyline) { layer.remove(); }
+            });
+
+            // Draw a line for every truck route returned by the AI
+            const colors = ['#ff0044', '#00e676', '#00d2ff', '#ffb300'];
+            let allBounds = L.latLngBounds();
+
+            data.routes.forEach((truckRoute, index) => {
+                // Leaflet expects [Lat, Lon], so we flip the coordinates
+                const latLngs = truckRoute.map(coord => [coord[1], coord[0]]);
+                const routeColor = colors[index % colors.length];
+                
+                const polyline = L.polyline(latLngs, {color: routeColor, weight: 4}).addTo(map);
+                allBounds.extend(polyline.getBounds());
+            });
+
+            if (data.routes.length > 0) {
+                map.fitBounds(allBounds);
+            } else {
+                alert("No route found! Try increasing the time limit.");
+            }
         }
     </script>
 </body>
