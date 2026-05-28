@@ -88,47 +88,65 @@
                 
                 // Clear any old lines off the map from previous clicks
                 map.eachLayer((layer) => {
-                    if (layer instanceof L.Polyline) { 
+                    // Remove polylines and GeoJSON layers
+                    if (layer instanceof L.Polyline || layer instanceof L.GeoJSON) { 
                         layer.remove(); 
                     }
                 });
 
-                // Set up beautiful, distinct colors for up to 6 different trucks
                 const colors = ['#ff0044', '#00e676', '#00d2ff', '#ffb300', '#b100ff', '#ff7b00'];
                 let allBounds = L.latLngBounds();
 
                 // Check if any routes were actually returned
                 if (data.routes && data.routes.length > 0) {
                     
-                    // Draw a line for every truck route returned by the AI
-                    data.routes.forEach((truckRoute, index) => {
-                        // Leaflet expects [Lat, Lon], but Python/GeoJSON sends [Lon, Lat]
-                        // We must map over the array and flip them
-                        const latLngs = truckRoute.map(coord => [coord[1], coord[0]]);
+                    // We use a traditional for-loop so we can `await` the OSRM street data
+                    for (let i = 0; i < data.routes.length; i++) {
+                        const truckRoute = data.routes[i];
+                        const routeColor = colors[i % colors.length];
+
+                        // 1. Format the coordinates for the OSRM API (lon,lat;lon,lat...)
+                        const coordString = truckRoute.map(coord => `${coord[0]},${coord[1]}`).join(';');
                         
-                        // Pick a color based on the truck number
-                        const routeColor = colors[index % colors.length];
+                        // 2. Ping OSRM to get the real street geometry between these stations
+                        const osrmUrl = `https://router.project-osrm.org/route/v1/driving/${coordString}?overview=full&geometries=geojson`;
                         
-                        // Draw the glowing line
-                        const polyline = L.polyline(latLngs, {
-                            color: routeColor, 
-                            weight: 5,
-                            opacity: 0.8
-                        }).addTo(map);
-                        
-                        // Expand the invisible camera box to include this route
-                        allBounds.extend(polyline.getBounds());
-                    });
+                        try {
+                            const osrmResponse = await fetch(osrmUrl);
+                            const osrmData = await osrmResponse.json();
+
+                            if (osrmData.code === 'Ok') {
+                                // 3. Draw the road-snapped GeoJSON route
+                                const roadGeometry = osrmData.routes[0].geometry;
+                                const geoJsonLayer = L.geoJSON(roadGeometry, {
+                                    style: { color: routeColor, weight: 5, opacity: 0.8 }
+                                }).addTo(map);
+                                
+                                allBounds.extend(geoJsonLayer.getBounds());
+                            } else {
+                                // Fallback: If OSRM fails for some reason, draw a straight dotted line
+                                console.warn("OSRM couldn't snap this route. Drawing straight lines instead.");
+                                const latLngs = truckRoute.map(coord => [coord[1], coord[0]]);
+                                const fallbackLine = L.polyline(latLngs, {
+                                    color: routeColor, weight: 5, opacity: 0.8, dashArray: '10, 10'
+                                }).addTo(map);
+                                allBounds.extend(fallbackLine.getBounds());
+                            }
+                        } catch (err) {
+                            console.error("Failed to fetch street data from OSRM:", err);
+                        }
+                    }
 
                     // Zoom and pan the map to perfectly fit all the routes
-                    map.fitBounds(allBounds, { padding: [20, 20] });
+                    if (allBounds.isValid()) {
+                        map.fitBounds(allBounds, { padding: [20, 20] });
+                    }
                     
                 } else {
                     alert("No route found! The time limit might be too strict for the truck to leave the depot. Try increasing the minutes.");
                 }
 
             } catch (error) {
-                // Catch network errors (e.g., if Vercel is offline)
                 alert("🚨 Network Error: Could not connect to the backend API.");
                 console.error(error);
             }
