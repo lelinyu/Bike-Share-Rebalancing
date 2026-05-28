@@ -1,2 +1,12 @@
+[project]
+name = "bike-share-optimizer"
+version = "0.1.0"
+description = "LA Metro Route Optimizer"
+requires-python = ">=3.12"
+dependencies = [
+    "ortools==9.8.3296",
+    "numpy"
+]
+
 [tool.vercel]
 entrypoint = "api.optimize:handler"
