@@ -1,0 +1,2408 @@
+[
+    {
+        "station_number":4215,
+        "station_name":"Downtown Santa Monica E Line Station",
+        "station_region":"Westside",
+        "net_flux":21115
+    },
+    {
+        "station_number":3014,
+        "station_name":"Union Station West Portal",
+        "station_region":"DTLA",
+        "net_flux":5184
+    },
+    {
+        "station_number":3005,
+        "station_name":"7th & Flower",
+        "station_region":"DTLA",
+        "net_flux":5083
+    },
+    {
+        "station_number":3042,
+        "station_name":"1st & Central",
+        "station_region":"DTLA",
+        "net_flux":4764
+    },
+    {
+        "station_number":3082,
+        "station_name":"Traction & Rose",
+        "station_region":"DTLA",
+        "net_flux":3658
+    },
+    {
+        "station_number":4216,
+        "station_name":"17th St \/ SMC E Line Station",
+        "station_region":"Westside",
+        "net_flux":3420
+    },
+    {
+        "station_number":3063,
+        "station_name":"Pershing Square",
+        "station_region":"DTLA",
+        "net_flux":3208
+    },
+    {
+        "station_number":4487,
+        "station_name":"Broxton & Weyburn",
+        "station_region":"Westside",
+        "net_flux":2841
+    },
+    {
+        "station_number":4245,
+        "station_name":"University & Hoover",
+        "station_region":"DTLA",
+        "net_flux":2560
+    },
+    {
+        "station_number":3031,
+        "station_name":"7th & Spring",
+        "station_region":"DTLA",
+        "net_flux":2300
+    },
+    {
+        "station_number":3032,
+        "station_name":"Hope & 6th",
+        "station_region":"DTLA",
+        "net_flux":2259
+    },
+    {
+        "station_number":3023,
+        "station_name":"1st & Judge John Aiso",
+        "station_region":"DTLA",
+        "net_flux":2221
+    },
+    {
+        "station_number":4528,
+        "station_name":"Glendon & Kinross",
+        "station_region":"DTLA",
+        "net_flux":1890
+    },
+    {
+        "station_number":3034,
+        "station_name":"Hope & 11th",
+        "station_region":"DTLA",
+        "net_flux":1775
+    },
+    {
+        "station_number":4249,
+        "station_name":"Figueroa & McCarthy Way",
+        "station_region":"DTLA",
+        "net_flux":1497
+    },
+    {
+        "station_number":3035,
+        "station_name":"Figueroa & 8th",
+        "station_region":"DTLA",
+        "net_flux":1103
+    },
+    {
+        "station_number":3065,
+        "station_name":"New High & Ord",
+        "station_region":"DTLA",
+        "net_flux":1094
+    },
+    {
+        "station_number":3036,
+        "station_name":"Willow St & Mateo St",
+        "station_region":"DTLA",
+        "net_flux":1071
+    },
+    {
+        "station_number":3045,
+        "station_name":"18th & San Pedro",
+        "station_region":"DTLA",
+        "net_flux":924
+    },
+    {
+        "station_number":4345,
+        "station_name":"Ocean Front Walk & Navy",
+        "station_region":"Westside",
+        "net_flux":875
+    },
+    {
+        "station_number":4454,
+        "station_name":"Vermont & Exposition",
+        "station_region":"DTLA",
+        "net_flux":831
+    },
+    {
+        "station_number":4613,
+        "station_name":"Gateway Plaza",
+        "station_region":"Westside",
+        "net_flux":820
+    },
+    {
+        "station_number":3058,
+        "station_name":"Industrial St & Mateo St",
+        "station_region":"DTLA",
+        "net_flux":820
+    },
+    {
+        "station_number":3037,
+        "station_name":"Imperial & 7th",
+        "station_region":"DTLA",
+        "net_flux":816
+    },
+    {
+        "station_number":3048,
+        "station_name":"5th & Hewitt",
+        "station_region":"DTLA",
+        "net_flux":783
+    },
+    {
+        "station_number":4273,
+        "station_name":"Hoover & 32nd",
+        "station_region":"DTLA",
+        "net_flux":779
+    },
+    {
+        "station_number":3069,
+        "station_name":"Broadway & 3rd",
+        "station_region":"DTLA",
+        "net_flux":771
+    },
+    {
+        "station_number":3011,
+        "station_name":"Figueroa & Pico",
+        "station_region":"DTLA",
+        "net_flux":768
+    },
+    {
+        "station_number":3010,
+        "station_name":"11th & Maple",
+        "station_region":"DTLA",
+        "net_flux":754
+    },
+    {
+        "station_number":3047,
+        "station_name":"Pico & Flower",
+        "station_region":"DTLA",
+        "net_flux":720
+    },
+    {
+        "station_number":4536,
+        "station_name":"Venice & Abbot Kinney",
+        "station_region":"Westside",
+        "net_flux":689
+    },
+    {
+        "station_number":3062,
+        "station_name":"3rd & San Pedro",
+        "station_region":"DTLA",
+        "net_flux":688
+    },
+    {
+        "station_number":4344,
+        "station_name":"Downtown Santa Monica Expo Line Station",
+        "station_region":"Westside",
+        "net_flux":649
+    },
+    {
+        "station_number":4275,
+        "station_name":"Expo Park\/LAFC",
+        "station_region":"DTLA",
+        "net_flux":644
+    },
+    {
+        "station_number":3075,
+        "station_name":"Broadway & 9th",
+        "station_region":"DTLA",
+        "net_flux":642
+    },
+    {
+        "station_number":3064,
+        "station_name":"Grand & 8th",
+        "station_region":"DTLA",
+        "net_flux":618
+    },
+    {
+        "station_number":4652,
+        "station_name":"Arizona Ave & 16th St",
+        "station_region":"Westside",
+        "net_flux":596
+    },
+    {
+        "station_number":3006,
+        "station_name":"Olive & 8th",
+        "station_region":"DTLA",
+        "net_flux":592
+    },
+    {
+        "station_number":3022,
+        "station_name":"3rd & Santa Fe",
+        "station_region":"DTLA",
+        "net_flux":589
+    },
+    {
+        "station_number":3051,
+        "station_name":"7th & Broadway",
+        "station_region":"DTLA",
+        "net_flux":572
+    },
+    {
+        "station_number":4563,
+        "station_name":"Venice & Glendon",
+        "station_region":"Westside",
+        "net_flux":566
+    },
+    {
+        "station_number":3076,
+        "station_name":"9th & Los Angeles",
+        "station_region":"DTLA",
+        "net_flux":555
+    },
+    {
+        "station_number":4390,
+        "station_name":"Kenmore & 3rd",
+        "station_region":"DTLA",
+        "net_flux":531
+    },
+    {
+        "station_number":4562,
+        "station_name":"Sepulveda & National",
+        "station_region":"Westside",
+        "net_flux":495
+    },
+    {
+        "station_number":4410,
+        "station_name":"Kenmore & 6th",
+        "station_region":"DTLA",
+        "net_flux":489
+    },
+    {
+        "station_number":3018,
+        "station_name":"Grand & Olympic",
+        "station_region":"DTLA",
+        "net_flux":464
+    },
+    {
+        "station_number":3054,
+        "station_name":"Factory Place & Alameda",
+        "station_region":"DTLA",
+        "net_flux":449
+    },
+    {
+        "station_number":4570,
+        "station_name":"Sepulveda & Venice",
+        "station_region":"Westside",
+        "net_flux":445
+    },
+    {
+        "station_number":4312,
+        "station_name":"4th & Vermont",
+        "station_region":"DTLA",
+        "net_flux":434
+    },
+    {
+        "station_number":4160,
+        "station_name":"Fillmore Station",
+        "station_region":"Pasadena",
+        "net_flux":433
+    },
+    {
+        "station_number":4165,
+        "station_name":"Del Mar Station",
+        "station_region":"Pasadena",
+        "net_flux":425
+    },
+    {
+        "station_number":4584,
+        "station_name":"Fountain & Vine",
+        "station_region":"DTLA",
+        "net_flux":421
+    },
+    {
+        "station_number":4204,
+        "station_name":"Washington & Abbot Kinney",
+        "station_region":"Westside",
+        "net_flux":399
+    },
+    {
+        "station_number":4266,
+        "station_name":"28th & Figueroa",
+        "station_region":"DTLA",
+        "net_flux":394
+    },
+    {
+        "station_number":4158,
+        "station_name":"Lake & California",
+        "station_region":"Pasadena",
+        "net_flux":388
+    },
+    {
+        "station_number":4518,
+        "station_name":"Normandie & 8th",
+        "station_region":"DTLA",
+        "net_flux":370
+    },
+    {
+        "station_number":3077,
+        "station_name":"8th & Wall",
+        "station_region":"DTLA",
+        "net_flux":349
+    },
+    {
+        "station_number":4313,
+        "station_name":"Westlake\/Macarthur Park Station",
+        "station_region":"DTLA",
+        "net_flux":346
+    },
+    {
+        "station_number":4672,
+        "station_name":"7th & Broadway",
+        "station_region":"DTLA",
+        "net_flux":345
+    },
+    {
+        "station_number":4515,
+        "station_name":"Mississippi & Sawtelle",
+        "station_region":"Westside",
+        "net_flux":333
+    },
+    {
+        "station_number":4512,
+        "station_name":"Figueroa & 11th",
+        "station_region":"DTLA",
+        "net_flux":323
+    },
+    {
+        "station_number":4492,
+        "station_name":"Westwood\/Rancho Park E Line Station",
+        "station_region":"Westside",
+        "net_flux":321
+    },
+    {
+        "station_number":3081,
+        "station_name":"Stanford & 12th",
+        "station_region":"DTLA",
+        "net_flux":301
+    },
+    {
+        "station_number":4482,
+        "station_name":"Wilcox & Fountain",
+        "station_region":"DTLA",
+        "net_flux":299
+    },
+    {
+        "station_number":4476,
+        "station_name":"Sunset & Silver Lake",
+        "station_region":"DTLA",
+        "net_flux":295
+    },
+    {
+        "station_number":4247,
+        "station_name":"25th & Vermont",
+        "station_region":"DTLA",
+        "net_flux":293
+    },
+    {
+        "station_number":4177,
+        "station_name":"Madison & Colorado",
+        "station_region":"Pasadena",
+        "net_flux":282
+    },
+    {
+        "station_number":4439,
+        "station_name":"Santa Monica & Virgil",
+        "station_region":"DTLA",
+        "net_flux":277
+    },
+    {
+        "station_number":4516,
+        "station_name":"7th & Hill",
+        "station_region":"DTLA",
+        "net_flux":276
+    },
+    {
+        "station_number":4493,
+        "station_name":"Sunset Triangle Plaza",
+        "station_region":"DTLA",
+        "net_flux":273
+    },
+    {
+        "station_number":4300,
+        "station_name":"Union & Olympic",
+        "station_region":"DTLA",
+        "net_flux":260
+    },
+    {
+        "station_number":4575,
+        "station_name":"Lucerne & Sepulveda",
+        "station_region":"Westside",
+        "net_flux":249
+    },
+    {
+        "station_number":3057,
+        "station_name":"18th & Figueroa",
+        "station_region":"DTLA",
+        "net_flux":246
+    },
+    {
+        "station_number":4447,
+        "station_name":"Rampart & Wilshire",
+        "station_region":"DTLA",
+        "net_flux":244
+    },
+    {
+        "station_number":4587,
+        "station_name":"Wiltern",
+        "station_region":"DTLA",
+        "net_flux":243
+    },
+    {
+        "station_number":4449,
+        "station_name":"12th & Valencia",
+        "station_region":"DTLA",
+        "net_flux":242
+    },
+    {
+        "station_number":4246,
+        "station_name":"32nd & Figueroa",
+        "station_region":"DTLA",
+        "net_flux":238
+    },
+    {
+        "station_number":4301,
+        "station_name":"Maubert & Vermont",
+        "station_region":"DTLA",
+        "net_flux":237
+    },
+    {
+        "station_number":4547,
+        "station_name":"Stanford & Washington",
+        "station_region":"Westside",
+        "net_flux":235
+    },
+    {
+        "station_number":4306,
+        "station_name":"8th & Vermont",
+        "station_region":"DTLA",
+        "net_flux":212
+    },
+    {
+        "station_number":4162,
+        "station_name":"Memorial Park Station",
+        "station_region":"Pasadena",
+        "net_flux":202
+    },
+    {
+        "station_number":4524,
+        "station_name":"Wilshire & Normandie",
+        "station_region":"DTLA",
+        "net_flux":199
+    },
+    {
+        "station_number":4405,
+        "station_name":"Berendo & Olympic",
+        "station_region":"DTLA",
+        "net_flux":199
+    },
+    {
+        "station_number":4147,
+        "station_name":"Fair Oaks & Mercantile Alley",
+        "station_region":"Pasadena",
+        "net_flux":191
+    },
+    {
+        "station_number":4456,
+        "station_name":"Ardmore & Olympic",
+        "station_region":"DTLA",
+        "net_flux":178
+    },
+    {
+        "station_number":4475,
+        "station_name":"San Pedro & Winston",
+        "station_region":"DTLA",
+        "net_flux":176
+    },
+    {
+        "station_number":3033,
+        "station_name":"Main & 9th",
+        "station_region":"DTLA",
+        "net_flux":171
+    },
+    {
+        "station_number":4513,
+        "station_name":"Edgemont & Melrose",
+        "station_region":"DTLA",
+        "net_flux":158
+    },
+    {
+        "station_number":3020,
+        "station_name":"Hill & Washington",
+        "station_region":"DTLA",
+        "net_flux":154
+    },
+    {
+        "station_number":4180,
+        "station_name":"Caltech West",
+        "station_region":"Pasadena",
+        "net_flux":148
+    },
+    {
+        "station_number":4568,
+        "station_name":"Palms E Line Station",
+        "station_region":"Westside",
+        "net_flux":146
+    },
+    {
+        "station_number":4548,
+        "station_name":"Durango & Venice",
+        "station_region":"Westside",
+        "net_flux":135
+    },
+    {
+        "station_number":4557,
+        "station_name":"Venice & Sawtelle",
+        "station_region":"Westside",
+        "net_flux":134
+    },
+    {
+        "station_number":4537,
+        "station_name":"Highland & Sunset",
+        "station_region":"DTLA",
+        "net_flux":129
+    },
+    {
+        "station_number":4404,
+        "station_name":"Albany & Olympic",
+        "station_region":"DTLA",
+        "net_flux":127
+    },
+    {
+        "station_number":4554,
+        "station_name":"Venice & Colonial",
+        "station_region":"Westside",
+        "net_flux":126
+    },
+    {
+        "station_number":4696,
+        "station_name":"Avalon & Slauson",
+        "station_region":"DTLA",
+        "net_flux":121
+    },
+    {
+        "station_number":4409,
+        "station_name":"Maxella & Del Ray",
+        "station_region":"Westside",
+        "net_flux":118
+    },
+    {
+        "station_number":4311,
+        "station_name":"7th & Berendo",
+        "station_region":"DTLA",
+        "net_flux":117
+    },
+    {
+        "station_number":4632,
+        "station_name":"Maxella & Glencoe",
+        "station_region":"Westside",
+        "net_flux":108
+    },
+    {
+        "station_number":4521,
+        "station_name":"Inglewood & Ballona",
+        "station_region":"Westside",
+        "net_flux":108
+    },
+    {
+        "station_number":3056,
+        "station_name":"Grand & 14th",
+        "station_region":"DTLA",
+        "net_flux":107
+    },
+    {
+        "station_number":4302,
+        "station_name":"Vermont Pl & Vermont",
+        "station_region":"DTLA",
+        "net_flux":104
+    },
+    {
+        "station_number":4438,
+        "station_name":"Hoover & Fountain",
+        "station_region":"DTLA",
+        "net_flux":102
+    },
+    {
+        "station_number":4525,
+        "station_name":"Hawthorn & Orange",
+        "station_region":"DTLA",
+        "net_flux":97
+    },
+    {
+        "station_number":3079,
+        "station_name":"Temple & Vignes",
+        "station_region":"DTLA",
+        "net_flux":96
+    },
+    {
+        "station_number":4600,
+        "station_name":"Lankershim & Califa",
+        "station_region":"North Hollywood",
+        "net_flux":95
+    },
+    {
+        "station_number":4149,
+        "station_name":"Arroyo Parkway & Bellevue",
+        "station_region":"Pasadena",
+        "net_flux":95
+    },
+    {
+        "station_number":4157,
+        "station_name":"Lake & Del Mar",
+        "station_region":"Pasadena",
+        "net_flux":94
+    },
+    {
+        "station_number":4387,
+        "station_name":"Row DTLA",
+        "station_region":"DTLA",
+        "net_flux":93
+    },
+    {
+        "station_number":4159,
+        "station_name":"Pasadena City College",
+        "station_region":"Pasadena",
+        "net_flux":92
+    },
+    {
+        "station_number":4628,
+        "station_name":"7th & Westmoreland",
+        "station_region":"DTLA",
+        "net_flux":90
+    },
+    {
+        "station_number":4627,
+        "station_name":"Argyle & Hollywood",
+        "station_region":"DTLA",
+        "net_flux":84
+    },
+    {
+        "station_number":4671,
+        "station_name":"CicLAvia Venice - National",
+        "station_region":"Westside",
+        "net_flux":77
+    },
+    {
+        "station_number":4543,
+        "station_name":"Toes Beach at Culver Blvd",
+        "station_region":"Westside",
+        "net_flux":75
+    },
+    {
+        "station_number":4523,
+        "station_name":"Western & 3rd",
+        "station_region":"DTLA",
+        "net_flux":74
+    },
+    {
+        "station_number":4372,
+        "station_name":"Public Bike Rack: Culver City Expo Line",
+        "station_region":"Westside",
+        "net_flux":71
+    },
+    {
+        "station_number":4314,
+        "station_name":"7th & Park View",
+        "station_region":"DTLA",
+        "net_flux":71
+    },
+    {
+        "station_number":4540,
+        "station_name":"1st & Utah",
+        "station_region":"DTLA",
+        "net_flux":67
+    },
+    {
+        "station_number":4144,
+        "station_name":"Cordova & Lake",
+        "station_region":"Pasadena",
+        "net_flux":67
+    },
+    {
+        "station_number":3080,
+        "station_name":"San Julian & 12th",
+        "station_region":"DTLA",
+        "net_flux":67
+    },
+    {
+        "station_number":4444,
+        "station_name":"Wilshire & Hobart",
+        "station_region":"DTLA",
+        "net_flux":66
+    },
+    {
+        "station_number":4558,
+        "station_name":"Bagley & Venice",
+        "station_region":"Westside",
+        "net_flux":65
+    },
+    {
+        "station_number":4700,
+        "station_name":"Denker & Slauson",
+        "station_region":"DTLA",
+        "net_flux":62
+    },
+    {
+        "station_number":4491,
+        "station_name":"Main & Winston",
+        "station_region":"DTLA",
+        "net_flux":61
+    },
+    {
+        "station_number":4680,
+        "station_name":"Broadway & 8th",
+        "station_region":"DTLA",
+        "net_flux":58
+    },
+    {
+        "station_number":4167,
+        "station_name":"Pasadena & Dayton",
+        "station_region":"Pasadena",
+        "net_flux":58
+    },
+    {
+        "station_number":4599,
+        "station_name":"Chandler & Cahuenga",
+        "station_region":"North Hollywood",
+        "net_flux":58
+    },
+    {
+        "station_number":4592,
+        "station_name":"CicLAvia\u0096Heart of LA presented by Metro",
+        "station_region":"DTLA",
+        "net_flux":55
+    },
+    {
+        "station_number":4692,
+        "station_name":"CicLAvia West Adams Meets University Park - West Adams Hub",
+        "station_region":"Westside",
+        "net_flux":53
+    },
+    {
+        "station_number":4342,
+        "station_name":"Abbot Kinney & Cadiz",
+        "station_region":"Westside",
+        "net_flux":50
+    },
+    {
+        "station_number":4579,
+        "station_name":"Alla & Glencoe",
+        "station_region":"Westside",
+        "net_flux":48
+    },
+    {
+        "station_number":4402,
+        "station_name":"Pop Hollywood Ciclavia Walk of Fame Hub",
+        "station_region":"DTLA",
+        "net_flux":47
+    },
+    {
+        "station_number":4394,
+        "station_name":"Westlawn & Beatrice",
+        "station_region":"Westside",
+        "net_flux":44
+    },
+    {
+        "station_number":4645,
+        "station_name":"University Village (Sawtelle Blvd)",
+        "station_region":"Westside",
+        "net_flux":42
+    },
+    {
+        "station_number":4153,
+        "station_name":"Rose Bowl",
+        "station_region":"Pasadena",
+        "net_flux":42
+    },
+    {
+        "station_number":4443,
+        "station_name":"Figueroa & Jefferson",
+        "station_region":"DTLA",
+        "net_flux":41
+    },
+    {
+        "station_number":4690,
+        "station_name":"Vineland & Burbank",
+        "station_region":"North Hollywood",
+        "net_flux":40
+    },
+    {
+        "station_number":4472,
+        "station_name":"Santa Monica & Sunset",
+        "station_region":"DTLA",
+        "net_flux":38
+    },
+    {
+        "station_number":4415,
+        "station_name":"Chandler & Laurel Canyon",
+        "station_region":"North Hollywood",
+        "net_flux":33
+    },
+    {
+        "station_number":4648,
+        "station_name":"CicLAvia Mid City Hub",
+        "station_region":"DTLA",
+        "net_flux":33
+    },
+    {
+        "station_number":4598,
+        "station_name":"North Hollywood Plaza",
+        "station_region":"North Hollywood",
+        "net_flux":32
+    },
+    {
+        "station_number":4176,
+        "station_name":"Caltech East",
+        "station_region":"Pasadena",
+        "net_flux":32
+    },
+    {
+        "station_number":4707,
+        "station_name":"Heliotrope & Lily Crest",
+        "station_region":"DTLA",
+        "net_flux":30
+    },
+    {
+        "station_number":4380,
+        "station_name":"Centinela & Lucile",
+        "station_region":"Westside",
+        "net_flux":29
+    },
+    {
+        "station_number":4634,
+        "station_name":"CicLAvia - Mariachi Plaza Hub",
+        "station_region":"DTLA",
+        "net_flux":28
+    },
+    {
+        "station_number":4354,
+        "station_name":"Venice & Glendon",
+        "station_region":"Westside",
+        "net_flux":28
+    },
+    {
+        "station_number":4413,
+        "station_name":"Lankershim & Vineland",
+        "station_region":"North Hollywood",
+        "net_flux":27
+    },
+    {
+        "station_number":4580,
+        "station_name":"Centinela & Lucile",
+        "station_region":"Westside",
+        "net_flux":27
+    },
+    {
+        "station_number":4509,
+        "station_name":"Western & Hollywood",
+        "station_region":"DTLA",
+        "net_flux":26
+    },
+    {
+        "station_number":4244,
+        "station_name":"Expo Park\/USC Station",
+        "station_region":"DTLA",
+        "net_flux":25
+    },
+    {
+        "station_number":4669,
+        "station_name":"Broadway & 7th",
+        "station_region":"DTLA",
+        "net_flux":25
+    },
+    {
+        "station_number":4703,
+        "station_name":"CicLAvia Historic South Central Hub",
+        "station_region":"DTLA",
+        "net_flux":23
+    },
+    {
+        "station_number":4678,
+        "station_name":"CicLAvia South LA - Exposition Hub",
+        "station_region":"DTLA",
+        "net_flux":22
+    },
+    {
+        "station_number":4553,
+        "station_name":"Venice & Beethoven",
+        "station_region":"Westside",
+        "net_flux":21
+    },
+    {
+        "station_number":4142,
+        "station_name":"Pasadena Convention Center",
+        "station_region":"Pasadena",
+        "net_flux":20
+    },
+    {
+        "station_number":4597,
+        "station_name":"Magnolia & Clybourn",
+        "station_region":"North Hollywood",
+        "net_flux":20
+    },
+    {
+        "station_number":4332,
+        "station_name":"National & Motor",
+        "station_region":"Westside",
+        "net_flux":19
+    },
+    {
+        "station_number":4428,
+        "station_name":"Lankershim & Hesby",
+        "station_region":"North Hollywood",
+        "net_flux":19
+    },
+    {
+        "station_number":4338,
+        "station_name":"Sepulveda & Venice",
+        "station_region":"Westside",
+        "net_flux":18
+    },
+    {
+        "station_number":4668,
+        "station_name":"Ciclavia Melrose - Fairfax Hub",
+        "station_region":"Westside",
+        "net_flux":18
+    },
+    {
+        "station_number":4623,
+        "station_name":"CicLAvia South LA \u0096 Exposition Hub",
+        "station_region":"DTLA",
+        "net_flux":17
+    },
+    {
+        "station_number":4636,
+        "station_name":"CicLAvia - Mariachi Plaza Hub",
+        "station_region":"DTLA",
+        "net_flux":16
+    },
+    {
+        "station_number":4663,
+        "station_name":"CicLAvia South LA - Historic South Central",
+        "station_region":"DTLA",
+        "net_flux":16
+    },
+    {
+        "station_number":4693,
+        "station_name":"CicLAvia - Koreatown Temp Station",
+        "station_region":"DTLA",
+        "net_flux":15
+    },
+    {
+        "station_number":4381,
+        "station_name":"Sepulveda & Lucerne",
+        "station_region":"Westside",
+        "net_flux":15
+    },
+    {
+        "station_number":4605,
+        "station_name":"Mariota & Riverside",
+        "station_region":"North Hollywood",
+        "net_flux":15
+    },
+    {
+        "station_number":4656,
+        "station_name":"CicLAvia South LA - Westmont Hub",
+        "station_region":"DTLA",
+        "net_flux":14
+    },
+    {
+        "station_number":3060,
+        "station_name":"Pico & Maple",
+        "station_region":"DTLA",
+        "net_flux":13
+    },
+    {
+        "station_number":4448,
+        "station_name":"23rd St & Flower",
+        "station_region":"DTLA",
+        "net_flux":11
+    },
+    {
+        "station_number":4457,
+        "station_name":"Hollywood & Rodney",
+        "station_region":"DTLA",
+        "net_flux":11
+    },
+    {
+        "station_number":4567,
+        "station_name":"Venice & Motor",
+        "station_region":"Westside",
+        "net_flux":11
+    },
+    {
+        "station_number":4416,
+        "station_name":"Riverside & Colfax",
+        "station_region":"North Hollywood",
+        "net_flux":11
+    },
+    {
+        "station_number":4400,
+        "station_name":"Newton & Central",
+        "station_region":"DTLA",
+        "net_flux":10
+    },
+    {
+        "station_number":4276,
+        "station_name":"Mariachi Plaza",
+        "station_region":"DTLA",
+        "net_flux":10
+    },
+    {
+        "station_number":4337,
+        "station_name":"Inglewood & Braddock",
+        "station_region":"Westside",
+        "net_flux":10
+    },
+    {
+        "station_number":4419,
+        "station_name":"Magnolia & Clybourn",
+        "station_region":"North Hollywood",
+        "net_flux":9
+    },
+    {
+        "station_number":4374,
+        "station_name":"Public Bike Rack: Westwood\/Rancho Park Expo Line South",
+        "station_region":"Westside",
+        "net_flux":9
+    },
+    {
+        "station_number":4138,
+        "station_name":"Old Pasadena",
+        "station_region":"Pasadena",
+        "net_flux":8
+    },
+    {
+        "station_number":4459,
+        "station_name":"Culver & McConnell",
+        "station_region":"Westside",
+        "net_flux":8
+    },
+    {
+        "station_number":4699,
+        "station_name":"Vermont & Slauson",
+        "station_region":"DTLA",
+        "net_flux":8
+    },
+    {
+        "station_number":4555,
+        "station_name":"Venice & Inglewood",
+        "station_region":"Westside",
+        "net_flux":7
+    },
+    {
+        "station_number":4662,
+        "station_name":"CicLAvia South LA - Leimert Park",
+        "station_region":"DTLA",
+        "net_flux":7
+    },
+    {
+        "station_number":4667,
+        "station_name":"Ciclavia Melrose - Fairfax Hub",
+        "station_region":"Westside",
+        "net_flux":6
+    },
+    {
+        "station_number":4484,
+        "station_name":"Campus Center Drive",
+        "station_region":"Westside",
+        "net_flux":6
+    },
+    {
+        "station_number":4684,
+        "station_name":"CicLAmini Lincoln Heights Ave 18 Hub",
+        "station_region":"DTLA",
+        "net_flux":6
+    },
+    {
+        "station_number":4422,
+        "station_name":"Riverside & Cahuenga",
+        "station_region":"North Hollywood",
+        "net_flux":5
+    },
+    {
+        "station_number":4432,
+        "station_name":"Public Bike Rack: Universal City\/Studio City Red Line Station",
+        "station_region":"North Hollywood",
+        "net_flux":5
+    },
+    {
+        "station_number":4384,
+        "station_name":"Inglewood & Ballona",
+        "station_region":"Westside",
+        "net_flux":4
+    },
+    {
+        "station_number":4442,
+        "station_name":"Normandie & Sunset",
+        "station_region":"DTLA",
+        "net_flux":4
+    },
+    {
+        "station_number":4729,
+        "station_name":"Echo Park Pool",
+        "station_region":"DTLA",
+        "net_flux":3
+    },
+    {
+        "station_number":4430,
+        "station_name":"Vineland & Burbank",
+        "station_region":"North Hollywood",
+        "net_flux":3
+    },
+    {
+        "station_number":4675,
+        "station_name":"CicLAvia South LA - Century Hub",
+        "station_region":"DTLA",
+        "net_flux":3
+    },
+    {
+        "station_number":4396,
+        "station_name":"Sepulveda & National",
+        "station_region":"Westside",
+        "net_flux":3
+    },
+    {
+        "station_number":4378,
+        "station_name":"Palms & Kelton",
+        "station_region":"Westside",
+        "net_flux":3
+    },
+    {
+        "station_number":4379,
+        "station_name":"Sepulveda & Charnock",
+        "station_region":"Westside",
+        "net_flux":3
+    },
+    {
+        "station_number":4426,
+        "station_name":"Tujunga & Moorpark",
+        "station_region":"North Hollywood",
+        "net_flux":3
+    },
+    {
+        "station_number":4647,
+        "station_name":"CicLavia Pico Union Hub",
+        "station_region":"DTLA",
+        "net_flux":2
+    },
+    {
+        "station_number":4527,
+        "station_name":"McCadden & Hollywood",
+        "station_region":"DTLA",
+        "net_flux":2
+    },
+    {
+        "station_number":4469,
+        "station_name":"Playa Vista Library",
+        "station_region":"Westside",
+        "net_flux":1
+    },
+    {
+        "station_number":4373,
+        "station_name":"Public Bike Rack: Westwood\/Rancho Park Expo Line North",
+        "station_region":"Westside",
+        "net_flux":1
+    },
+    {
+        "station_number":4321,
+        "station_name":"Expo & Bundy",
+        "station_region":"Westside",
+        "net_flux":1
+    },
+    {
+        "station_number":4654,
+        "station_name":"Culver City Pride Ride",
+        "station_region":"Westside",
+        "net_flux":1
+    },
+    {
+        "station_number":4665,
+        "station_name":"Gateway Plaza",
+        "station_region":"Westside",
+        "net_flux":0
+    },
+    {
+        "station_number":4727,
+        "station_name":"Camino Open Streets - City Terrace Park Hub",
+        "station_region":"DTLA",
+        "net_flux":0
+    },
+    {
+        "station_number":4461,
+        "station_name":"Rose & Overland",
+        "station_region":"Westside",
+        "net_flux":0
+    },
+    {
+        "station_number":3059,
+        "station_name":"11th & Santee",
+        "station_region":"DTLA",
+        "net_flux":0
+    },
+    {
+        "station_number":4650,
+        "station_name":"CicLAmini Watts",
+        "station_region":"DTLA",
+        "net_flux":0
+    },
+    {
+        "station_number":4651,
+        "station_name":"CicLAmini Watts",
+        "station_region":"DTLA",
+        "net_flux":0
+    },
+    {
+        "station_number":4429,
+        "station_name":"Chandler & Cahuenga",
+        "station_region":"North Hollywood",
+        "net_flux":-1
+    },
+    {
+        "station_number":4704,
+        "station_name":"CicLAvia Historic South Central - Watts Hub",
+        "station_region":"DTLA",
+        "net_flux":-1
+    },
+    {
+        "station_number":4463,
+        "station_name":"Tujunga & Hatteras",
+        "station_region":"North Hollywood",
+        "net_flux":-1
+    },
+    {
+        "station_number":4417,
+        "station_name":"Magnolia & Cartwright",
+        "station_region":"North Hollywood",
+        "net_flux":-1
+    },
+    {
+        "station_number":4601,
+        "station_name":"Lankershim & Hesby",
+        "station_region":"North Hollywood",
+        "net_flux":-1
+    },
+    {
+        "station_number":4369,
+        "station_name":"Pop-up Station at CicLAvia Culver City Hub",
+        "station_region":"Westside",
+        "net_flux":-2
+    },
+    {
+        "station_number":4395,
+        "station_name":"Del Rey Day Pop-up",
+        "station_region":"Westside",
+        "net_flux":-2
+    },
+    {
+        "station_number":4576,
+        "station_name":"Motor & Regent",
+        "station_region":"Westside",
+        "net_flux":-2
+    },
+    {
+        "station_number":4462,
+        "station_name":"Overland & Charnock",
+        "station_region":"Westside",
+        "net_flux":-2
+    },
+    {
+        "station_number":4408,
+        "station_name":"Venice & Sawtelle",
+        "station_region":"Westside",
+        "net_flux":-2
+    },
+    {
+        "station_number":4356,
+        "station_name":"CicLAvia Downtown Culver City Hub",
+        "station_region":"Westside",
+        "net_flux":-2
+    },
+    {
+        "station_number":4702,
+        "station_name":"CicLAmini Pico Union",
+        "station_region":"DTLA",
+        "net_flux":-2
+    },
+    {
+        "station_number":4726,
+        "station_name":"Temporary Union Station West Portal",
+        "station_region":"DTLA",
+        "net_flux":-3
+    },
+    {
+        "station_number":4460,
+        "station_name":"Culver & Inglewood",
+        "station_region":"Westside",
+        "net_flux":-3
+    },
+    {
+        "station_number":4431,
+        "station_name":"Lankershim & Califa",
+        "station_region":"North Hollywood",
+        "net_flux":-3
+    },
+    {
+        "station_number":4686,
+        "station_name":"Chinatown Hub - cicLAvia Heart of LA 2024",
+        "station_region":"DTLA",
+        "net_flux":-5
+    },
+    {
+        "station_number":4549,
+        "station_name":"Barrington & National",
+        "station_region":"Westside",
+        "net_flux":-5
+    },
+    {
+        "station_number":4687,
+        "station_name":"Evergreen Hub - cicLAvia Heart of LA 2024",
+        "station_region":"DTLA",
+        "net_flux":-5
+    },
+    {
+        "station_number":4418,
+        "station_name":"Lankershim & Moorpark",
+        "station_region":"North Hollywood",
+        "net_flux":-5
+    },
+    {
+        "station_number":4427,
+        "station_name":"Vineland & Otsego",
+        "station_region":"North Hollywood",
+        "net_flux":-5
+    },
+    {
+        "station_number":4341,
+        "station_name":"7th & Westminster",
+        "station_region":"Westside",
+        "net_flux":-8
+    },
+    {
+        "station_number":4357,
+        "station_name":"CicLAvia Palms Hub",
+        "station_region":"Westside",
+        "net_flux":-8
+    },
+    {
+        "station_number":4661,
+        "station_name":"CicLAvia South LA - Historic South Central",
+        "station_region":"DTLA",
+        "net_flux":-10
+    },
+    {
+        "station_number":4333,
+        "station_name":"Venice & Walgrove",
+        "station_region":"Westside",
+        "net_flux":-10
+    },
+    {
+        "station_number":4494,
+        "station_name":"Laveta Terrace & Sunset",
+        "station_region":"DTLA",
+        "net_flux":-12
+    },
+    {
+        "station_number":4470,
+        "station_name":"McConnell & Runway",
+        "station_region":"Westside",
+        "net_flux":-12
+    },
+    {
+        "station_number":4389,
+        "station_name":"Expo\/Sepulveda Expo Line Station",
+        "station_region":"Westside",
+        "net_flux":-15
+    },
+    {
+        "station_number":4397,
+        "station_name":"Mar Vista Rec Center",
+        "station_region":"Westside",
+        "net_flux":-15
+    },
+    {
+        "station_number":4458,
+        "station_name":"Culver & Centinela",
+        "station_region":"Westside",
+        "net_flux":-17
+    },
+    {
+        "station_number":4383,
+        "station_name":"McLaughlin & Venice",
+        "station_region":"Westside",
+        "net_flux":-18
+    },
+    {
+        "station_number":4414,
+        "station_name":"Chandler & Colfax",
+        "station_region":"North Hollywood",
+        "net_flux":-19
+    },
+    {
+        "station_number":4708,
+        "station_name":"CicLAvia Culver City Meets Venice - Arts District Hub",
+        "station_region":"Westside",
+        "net_flux":-19
+    },
+    {
+        "station_number":4473,
+        "station_name":"Vendome & Beverly",
+        "station_region":"DTLA",
+        "net_flux":-20
+    },
+    {
+        "station_number":4334,
+        "station_name":"Venice & Motor",
+        "station_region":"Westside",
+        "net_flux":-21
+    },
+    {
+        "station_number":4425,
+        "station_name":"Mariota & Riverside",
+        "station_region":"North Hollywood",
+        "net_flux":-22
+    },
+    {
+        "station_number":4646,
+        "station_name":"CicLavia Mid City Hub",
+        "station_region":"DTLA",
+        "net_flux":-22
+    },
+    {
+        "station_number":4655,
+        "station_name":"CicLAvia South LA - Westmont Hub",
+        "station_region":"DTLA",
+        "net_flux":-22
+    },
+    {
+        "station_number":4336,
+        "station_name":"Barrington & National",
+        "station_region":"Westside",
+        "net_flux":-23
+    },
+    {
+        "station_number":4602,
+        "station_name":"Magnolia & Cartwright",
+        "station_region":"North Hollywood",
+        "net_flux":-23
+    },
+    {
+        "station_number":4194,
+        "station_name":"Union Station East",
+        "station_region":"DTLA",
+        "net_flux":-24
+    },
+    {
+        "station_number":4352,
+        "station_name":"Washington & Abbot Kinney",
+        "station_region":"Westside",
+        "net_flux":-24
+    },
+    {
+        "station_number":4156,
+        "station_name":"Madison & Walnut",
+        "station_region":"Pasadena",
+        "net_flux":-26
+    },
+    {
+        "station_number":4603,
+        "station_name":"Riverside & Cahuenga",
+        "station_region":"North Hollywood",
+        "net_flux":-26
+    },
+    {
+        "station_number":4328,
+        "station_name":"Sepulveda & Palms",
+        "station_region":"Westside",
+        "net_flux":-27
+    },
+    {
+        "station_number":4596,
+        "station_name":"Chandler & Laurel Canyon",
+        "station_region":"North Hollywood",
+        "net_flux":-28
+    },
+    {
+        "station_number":4577,
+        "station_name":"Inglewood & Braddock",
+        "station_region":"Westside",
+        "net_flux":-28
+    },
+    {
+        "station_number":4625,
+        "station_name":"CicLAvia South LA \u0096 Exposition Hub",
+        "station_region":"DTLA",
+        "net_flux":-29
+    },
+    {
+        "station_number":4723,
+        "station_name":"Andalusia & Abbot Kinney",
+        "station_region":"Westside",
+        "net_flux":-30
+    },
+    {
+        "station_number":4629,
+        "station_name":"CicLavia West Hollywood Hub",
+        "station_region":"DTLA",
+        "net_flux":-30
+    },
+    {
+        "station_number":4539,
+        "station_name":"Cherokee & Hollywood",
+        "station_region":"DTLA",
+        "net_flux":-30
+    },
+    {
+        "station_number":4331,
+        "station_name":"Venice & Colonial",
+        "station_region":"Westside",
+        "net_flux":-31
+    },
+    {
+        "station_number":4604,
+        "station_name":"Lankershim & Vineland",
+        "station_region":"North Hollywood",
+        "net_flux":-31
+    },
+    {
+        "station_number":4406,
+        "station_name":"Normandie & Hollywood",
+        "station_region":"DTLA",
+        "net_flux":-32
+    },
+    {
+        "station_number":4322,
+        "station_name":"Venice & Inglewood",
+        "station_region":"Westside",
+        "net_flux":-32
+    },
+    {
+        "station_number":4349,
+        "station_name":"Rose & Main",
+        "station_region":"Westside",
+        "net_flux":-33
+    },
+    {
+        "station_number":4698,
+        "station_name":"Figueroa & Slauson",
+        "station_region":"DTLA",
+        "net_flux":-34
+    },
+    {
+        "station_number":4351,
+        "station_name":"Venice & Lincoln",
+        "station_region":"Westside",
+        "net_flux":-34
+    },
+    {
+        "station_number":4330,
+        "station_name":"Bagley & Venice",
+        "station_region":"Westside",
+        "net_flux":-36
+    },
+    {
+        "station_number":4181,
+        "station_name":"Oak Knoll & Colorado",
+        "station_region":"Pasadena",
+        "net_flux":-37
+    },
+    {
+        "station_number":4382,
+        "station_name":"Westwood & National",
+        "station_region":"Westside",
+        "net_flux":-39
+    },
+    {
+        "station_number":4407,
+        "station_name":"Pop Hollywood Ciclavia Barnsdall Art Park Hub",
+        "station_region":"DTLA",
+        "net_flux":-39
+    },
+    {
+        "station_number":4385,
+        "station_name":"Public Bike Rack: Westwood\/Rancho Park Expo Line",
+        "station_region":"Westside",
+        "net_flux":-40
+    },
+    {
+        "station_number":4350,
+        "station_name":"Rose & Rennie",
+        "station_region":"Westside",
+        "net_flux":-40
+    },
+    {
+        "station_number":4691,
+        "station_name":"CicLAvia West Adams Meets University Park - West Adams Hub",
+        "station_region":"Westside",
+        "net_flux":-51
+    },
+    {
+        "station_number":4565,
+        "station_name":"Alla & Maxella",
+        "station_region":"Westside",
+        "net_flux":-53
+    },
+    {
+        "station_number":4697,
+        "station_name":"Compton & Slauson",
+        "station_region":"DTLA",
+        "net_flux":-54
+    },
+    {
+        "station_number":4420,
+        "station_name":"North Hollywood Station",
+        "station_region":"North Hollywood",
+        "net_flux":-57
+    },
+    {
+        "station_number":4340,
+        "station_name":"17th St \/ SMC Expo Line Station",
+        "station_region":"Westside",
+        "net_flux":-58
+    },
+    {
+        "station_number":4664,
+        "station_name":"Koreatown Plaza",
+        "station_region":"DTLA",
+        "net_flux":-59
+    },
+    {
+        "station_number":4393,
+        "station_name":"Durango & Venice",
+        "station_region":"Westside",
+        "net_flux":-61
+    },
+    {
+        "station_number":4148,
+        "station_name":"Pasadena Central Library",
+        "station_region":"Pasadena",
+        "net_flux":-67
+    },
+    {
+        "station_number":4559,
+        "station_name":"Palms & Kelton",
+        "station_region":"Westside",
+        "net_flux":-70
+    },
+    {
+        "station_number":4453,
+        "station_name":"Lucile & Hoover",
+        "station_region":"DTLA",
+        "net_flux":-72
+    },
+    {
+        "station_number":4166,
+        "station_name":"Colorado & Hill",
+        "station_region":"Pasadena",
+        "net_flux":-76
+    },
+    {
+        "station_number":4348,
+        "station_name":"Rose & 7th",
+        "station_region":"Westside",
+        "net_flux":-77
+    },
+    {
+        "station_number":4452,
+        "station_name":"Hillhurst & Kingswell",
+        "station_region":"DTLA",
+        "net_flux":-77
+    },
+    {
+        "station_number":4440,
+        "station_name":"Wilshire & Alexandria",
+        "station_region":"DTLA",
+        "net_flux":-79
+    },
+    {
+        "station_number":4670,
+        "station_name":"CicLAvia Venice - National",
+        "station_region":"Westside",
+        "net_flux":-81
+    },
+    {
+        "station_number":4353,
+        "station_name":"Windward & Main",
+        "station_region":"Westside",
+        "net_flux":-81
+    },
+    {
+        "station_number":4227,
+        "station_name":"Grand \/ LATTC",
+        "station_region":"DTLA",
+        "net_flux":-81
+    },
+    {
+        "station_number":4595,
+        "station_name":"Chandler & Colfax",
+        "station_region":"North Hollywood",
+        "net_flux":-82
+    },
+    {
+        "station_number":4689,
+        "station_name":"University Village (Sepulveda Blvd)",
+        "station_region":"Westside",
+        "net_flux":-83
+    },
+    {
+        "station_number":4343,
+        "station_name":"California & Lincoln",
+        "station_region":"Westside",
+        "net_flux":-83
+    },
+    {
+        "station_number":4335,
+        "station_name":"Venice & Hughes",
+        "station_region":"Westside",
+        "net_flux":-83
+    },
+    {
+        "station_number":4324,
+        "station_name":"Palms & Motor",
+        "station_region":"Westside",
+        "net_flux":-85
+    },
+    {
+        "station_number":4329,
+        "station_name":"Palms & National",
+        "station_region":"Westside",
+        "net_flux":-85
+    },
+    {
+        "station_number":4146,
+        "station_name":"City Hall West",
+        "station_region":"Pasadena",
+        "net_flux":-88
+    },
+    {
+        "station_number":4325,
+        "station_name":"Venice & Clarington",
+        "station_region":"Westside",
+        "net_flux":-88
+    },
+    {
+        "station_number":3066,
+        "station_name":"Spring & College",
+        "station_region":"DTLA",
+        "net_flux":-88
+    },
+    {
+        "station_number":4529,
+        "station_name":"Whitley & Hollywood",
+        "station_region":"DTLA",
+        "net_flux":-91
+    },
+    {
+        "station_number":4578,
+        "station_name":"Main & 8th",
+        "station_region":"DTLA",
+        "net_flux":-93
+    },
+    {
+        "station_number":4561,
+        "station_name":"Sepulveda & Palms",
+        "station_region":"Westside",
+        "net_flux":-93
+    },
+    {
+        "station_number":3025,
+        "station_name":"Grand & Washington",
+        "station_region":"DTLA",
+        "net_flux":-94
+    },
+    {
+        "station_number":4560,
+        "station_name":"Sepulveda & Charnock",
+        "station_region":"Westside",
+        "net_flux":-98
+    },
+    {
+        "station_number":4169,
+        "station_name":"Oakland & Union",
+        "station_region":"Pasadena",
+        "net_flux":-101
+    },
+    {
+        "station_number":4455,
+        "station_name":"Rowena & Hyperion",
+        "station_region":"DTLA",
+        "net_flux":-104
+    },
+    {
+        "station_number":4544,
+        "station_name":"Dockweiler Beach at Imperial Hwy",
+        "station_region":"Westside",
+        "net_flux":-108
+    },
+    {
+        "station_number":4323,
+        "station_name":"Venice & Beethoven",
+        "station_region":"Westside",
+        "net_flux":-111
+    },
+    {
+        "station_number":4552,
+        "station_name":"Culver & Centinela",
+        "station_region":"Westside",
+        "net_flux":-117
+    },
+    {
+        "station_number":4582,
+        "station_name":"Westlawn & Beatrice",
+        "station_region":"Westside",
+        "net_flux":-118
+    },
+    {
+        "station_number":4213,
+        "station_name":"7th & Westminster",
+        "station_region":"Westside",
+        "net_flux":-121
+    },
+    {
+        "station_number":4483,
+        "station_name":"Glendale & Silver Lake",
+        "station_region":"DTLA",
+        "net_flux":-127
+    },
+    {
+        "station_number":4517,
+        "station_name":"Highland & Hollywood",
+        "station_region":"DTLA",
+        "net_flux":-129
+    },
+    {
+        "station_number":4303,
+        "station_name":"Sunset & Virgil",
+        "station_region":"DTLA",
+        "net_flux":-129
+    },
+    {
+        "station_number":4571,
+        "station_name":"Rose & Overland",
+        "station_region":"Westside",
+        "net_flux":-130
+    },
+    {
+        "station_number":4150,
+        "station_name":"Villa Parke",
+        "station_region":"Pasadena",
+        "net_flux":-139
+    },
+    {
+        "station_number":4478,
+        "station_name":"Tracy & Hyperion",
+        "station_region":"DTLA",
+        "net_flux":-139
+    },
+    {
+        "station_number":4566,
+        "station_name":"Venice & Hughes",
+        "station_region":"Westside",
+        "net_flux":-149
+    },
+    {
+        "station_number":4514,
+        "station_name":"Purdue & Santa Monica",
+        "station_region":"Westside",
+        "net_flux":-151
+    },
+    {
+        "station_number":4451,
+        "station_name":"Melbourne & Vermont",
+        "station_region":"DTLA",
+        "net_flux":-157
+    },
+    {
+        "station_number":4255,
+        "station_name":"Seabluff & Runway",
+        "station_region":"Westside",
+        "net_flux":-159
+    },
+    {
+        "station_number":4534,
+        "station_name":"Ivar & Hollywood",
+        "station_region":"DTLA",
+        "net_flux":-160
+    },
+    {
+        "station_number":4480,
+        "station_name":"Figueroa Plaza",
+        "station_region":"DTLA",
+        "net_flux":-160
+    },
+    {
+        "station_number":4183,
+        "station_name":"Catalina & Colorado",
+        "station_region":"Pasadena",
+        "net_flux":-161
+    },
+    {
+        "station_number":4151,
+        "station_name":"Los Robles & Cordova",
+        "station_region":"Pasadena",
+        "net_flux":-166
+    },
+    {
+        "station_number":4583,
+        "station_name":"McConnell & Runway",
+        "station_region":"Westside",
+        "net_flux":-176
+    },
+    {
+        "station_number":3008,
+        "station_name":"Figueroa & 9th",
+        "station_region":"DTLA",
+        "net_flux":-176
+    },
+    {
+        "station_number":4572,
+        "station_name":"National & Motor",
+        "station_region":"Westside",
+        "net_flux":-192
+    },
+    {
+        "station_number":3019,
+        "station_name":"12th & Hill",
+        "station_region":"DTLA",
+        "net_flux":-206
+    },
+    {
+        "station_number":4155,
+        "station_name":"Lake & Union",
+        "station_region":"Pasadena",
+        "net_flux":-208
+    },
+    {
+        "station_number":4217,
+        "station_name":"Broadway & 11th",
+        "station_region":"DTLA",
+        "net_flux":-212
+    },
+    {
+        "station_number":4556,
+        "station_name":"McLaughlin & Venice",
+        "station_region":"Westside",
+        "net_flux":-215
+    },
+    {
+        "station_number":4606,
+        "station_name":"North Hollywood Station",
+        "station_region":"North Hollywood",
+        "net_flux":-216
+    },
+    {
+        "station_number":4174,
+        "station_name":"Fair Oaks & Hammond",
+        "station_region":"Pasadena",
+        "net_flux":-228
+    },
+    {
+        "station_number":4346,
+        "station_name":"Ocean Front Walk & North Venice",
+        "station_region":"Westside",
+        "net_flux":-230
+    },
+    {
+        "station_number":4477,
+        "station_name":"Yucca & Argyle",
+        "station_region":"DTLA",
+        "net_flux":-239
+    },
+    {
+        "station_number":4401,
+        "station_name":"Vermont & Beverly",
+        "station_region":"DTLA",
+        "net_flux":-246
+    },
+    {
+        "station_number":4450,
+        "station_name":"Virgil & 6th",
+        "station_region":"DTLA",
+        "net_flux":-254
+    },
+    {
+        "station_number":4569,
+        "station_name":"Palms & Motor",
+        "station_region":"Westside",
+        "net_flux":-254
+    },
+    {
+        "station_number":4546,
+        "station_name":"Expo\/Bundy E Line Station",
+        "station_region":"Westside",
+        "net_flux":-256
+    },
+    {
+        "station_number":4660,
+        "station_name":"Venice & Walgrove",
+        "station_region":"Westside",
+        "net_flux":-260
+    },
+    {
+        "station_number":4511,
+        "station_name":"Union Station East Portal",
+        "station_region":"DTLA",
+        "net_flux":-261
+    },
+    {
+        "station_number":4490,
+        "station_name":"Figueroa & 4th",
+        "station_region":"DTLA",
+        "net_flux":-264
+    },
+    {
+        "station_number":3078,
+        "station_name":"Hill & College",
+        "station_region":"DTLA",
+        "net_flux":-271
+    },
+    {
+        "station_number":4486,
+        "station_name":"Vista Hermosa Park",
+        "station_region":"DTLA",
+        "net_flux":-276
+    },
+    {
+        "station_number":4538,
+        "station_name":"5th & Western",
+        "station_region":"DTLA",
+        "net_flux":-287
+    },
+    {
+        "station_number":4154,
+        "station_name":"Fair Oaks & Peoria",
+        "station_region":"Pasadena",
+        "net_flux":-291
+    },
+    {
+        "station_number":4581,
+        "station_name":"Playa Vista Library",
+        "station_region":"Westside",
+        "net_flux":-295
+    },
+    {
+        "station_number":4510,
+        "station_name":"Mohawk Bend",
+        "station_region":"DTLA",
+        "net_flux":-299
+    },
+    {
+        "station_number":4441,
+        "station_name":"University & 30th",
+        "station_region":"DTLA",
+        "net_flux":-313
+    },
+    {
+        "station_number":4152,
+        "station_name":"Pasadena Museum",
+        "station_region":"Pasadena",
+        "net_flux":-314
+    },
+    {
+        "station_number":4545,
+        "station_name":"Vista Del Mar & Culver",
+        "station_region":"Westside",
+        "net_flux":-317
+    },
+    {
+        "station_number":4564,
+        "station_name":"Expo\/Sepulveda E Line Station",
+        "station_region":"Westside",
+        "net_flux":-328
+    },
+    {
+        "station_number":4573,
+        "station_name":"Westwood & National",
+        "station_region":"Westside",
+        "net_flux":-372
+    },
+    {
+        "station_number":4163,
+        "station_name":"Lake & Locust",
+        "station_region":"Pasadena",
+        "net_flux":-381
+    },
+    {
+        "station_number":4347,
+        "station_name":"Pacific & North Venice",
+        "station_region":"Westside",
+        "net_flux":-386
+    },
+    {
+        "station_number":4304,
+        "station_name":"Shatto Pl & Wilshire",
+        "station_region":"DTLA",
+        "net_flux":-389
+    },
+    {
+        "station_number":4170,
+        "station_name":"Lake & Merrett",
+        "station_region":"Pasadena",
+        "net_flux":-391
+    },
+    {
+        "station_number":4436,
+        "station_name":"Vermont & Franklin",
+        "station_region":"DTLA",
+        "net_flux":-446
+    },
+    {
+        "station_number":4526,
+        "station_name":"Franklin & Fuller",
+        "station_region":"DTLA",
+        "net_flux":-446
+    },
+    {
+        "station_number":4437,
+        "station_name":"Franklin & Hillhurst",
+        "station_region":"DTLA",
+        "net_flux":-448
+    },
+    {
+        "station_number":3046,
+        "station_name":"2nd & Hill",
+        "station_region":"DTLA",
+        "net_flux":-464
+    },
+    {
+        "station_number":3016,
+        "station_name":"Los Angeles & Temple",
+        "station_region":"DTLA",
+        "net_flux":-470
+    },
+    {
+        "station_number":4293,
+        "station_name":"Westlake & 3rd",
+        "station_region":"DTLA",
+        "net_flux":-486
+    },
+    {
+        "station_number":4315,
+        "station_name":"Union & 7th",
+        "station_region":"DTLA",
+        "net_flux":-492
+    },
+    {
+        "station_number":4445,
+        "station_name":"Sunset & Douglas",
+        "station_region":"DTLA",
+        "net_flux":-493
+    },
+    {
+        "station_number":4202,
+        "station_name":"Abbot Kinney & Cadiz",
+        "station_region":"Westside",
+        "net_flux":-495
+    },
+    {
+        "station_number":4267,
+        "station_name":"28th & University",
+        "station_region":"DTLA",
+        "net_flux":-505
+    },
+    {
+        "station_number":4220,
+        "station_name":"Park & Echo Park",
+        "station_region":"DTLA",
+        "net_flux":-512
+    },
+    {
+        "station_number":4446,
+        "station_name":"James M. Wood & Alvarado",
+        "station_region":"DTLA",
+        "net_flux":-533
+    },
+    {
+        "station_number":4206,
+        "station_name":"California & Lincoln",
+        "station_region":"Westside",
+        "net_flux":-572
+    },
+    {
+        "station_number":4207,
+        "station_name":"Rose & 7th",
+        "station_region":"Westside",
+        "net_flux":-573
+    },
+    {
+        "station_number":4254,
+        "station_name":"Hoover & 29th",
+        "station_region":"DTLA",
+        "net_flux":-655
+    },
+    {
+        "station_number":3038,
+        "station_name":"Main & 5th",
+        "station_region":"DTLA",
+        "net_flux":-686
+    },
+    {
+        "station_number":4248,
+        "station_name":"29th & Ellendale",
+        "station_region":"DTLA",
+        "net_flux":-688
+    },
+    {
+        "station_number":4208,
+        "station_name":"Rose & Rennie",
+        "station_region":"Westside",
+        "net_flux":-736
+    },
+    {
+        "station_number":4205,
+        "station_name":"Venice & Lincoln",
+        "station_region":"Westside",
+        "net_flux":-816
+    },
+    {
+        "station_number":4474,
+        "station_name":"Ambrose & Hillhurst",
+        "station_region":"DTLA",
+        "net_flux":-830
+    },
+    {
+        "station_number":3055,
+        "station_name":"7th & Main",
+        "station_region":"DTLA",
+        "net_flux":-903
+    },
+    {
+        "station_number":4479,
+        "station_name":"Ellendale Pl & Adams",
+        "station_region":"DTLA",
+        "net_flux":-1085
+    },
+    {
+        "station_number":3074,
+        "station_name":"Hope & Olympic",
+        "station_region":"DTLA",
+        "net_flux":-1163
+    },
+    {
+        "station_number":4250,
+        "station_name":"Severance & Adams",
+        "station_region":"DTLA",
+        "net_flux":-1195
+    },
+    {
+        "station_number":3067,
+        "station_name":"Main & 6th",
+        "station_region":"DTLA",
+        "net_flux":-1345
+    },
+    {
+        "station_number":4644,
+        "station_name":"Weyburn Terrace",
+        "station_region":"Westside",
+        "net_flux":-1353
+    },
+    {
+        "station_number":3029,
+        "station_name":"Main & 4th",
+        "station_region":"DTLA",
+        "net_flux":-1398
+    },
+    {
+        "station_number":4211,
+        "station_name":"Pacific & North Venice",
+        "station_region":"Westside",
+        "net_flux":-1416
+    },
+    {
+        "station_number":3026,
+        "station_name":"Figueroa & Cesar Chavez",
+        "station_region":"DTLA",
+        "net_flux":-1684
+    },
+    {
+        "station_number":4212,
+        "station_name":"Windward & Main",
+        "station_region":"Westside",
+        "net_flux":-1881
+    },
+    {
+        "station_number":4614,
+        "station_name":"Perloff Hall",
+        "station_region":"Westside",
+        "net_flux":-1898
+    },
+    {
+        "station_number":4210,
+        "station_name":"Ocean Front Walk & North Venice",
+        "station_region":"Westside",
+        "net_flux":-1947
+    },
+    {
+        "station_number":4209,
+        "station_name":"Rose & Main",
+        "station_region":"Westside",
+        "net_flux":-2185
+    },
+    {
+        "station_number":3040,
+        "station_name":"Wilshire & Witmer",
+        "station_region":"DTLA",
+        "net_flux":-2225
+    },
+    {
+        "station_number":3049,
+        "station_name":"2nd & Figueroa",
+        "station_region":"DTLA",
+        "net_flux":-2467
+    },
+    {
+        "station_number":3027,
+        "station_name":"Spring & 3rd",
+        "station_region":"DTLA",
+        "net_flux":-2637
+    },
+    {
+        "station_number":3028,
+        "station_name":"Grand & Temple",
+        "station_region":"DTLA",
+        "net_flux":-3353
+    },
+    {
+        "station_number":3052,
+        "station_name":"7th & Bixel",
+        "station_region":"DTLA",
+        "net_flux":-3531
+    },
+    {
+        "station_number":3024,
+        "station_name":"Hope & 1st",
+        "station_region":"DTLA",
+        "net_flux":-3573
+    },
+    {
+        "station_number":3007,
+        "station_name":"5th & Grand",
+        "station_region":"DTLA",
+        "net_flux":-4505
+    },
+    {
+        "station_number":3030,
+        "station_name":"Main & 1st",
+        "station_region":"DTLA",
+        "net_flux":-4769
+    },
+    {
+        "station_number":4643,
+        "station_name":"Drake Stadium",
+        "station_region":"Westside",
+        "net_flux":-6548
+    },
+    {
+        "station_number":4214,
+        "station_name":"Ocean Front Walk & Navy",
+        "station_region":"Westside",
+        "net_flux":-9887
+    },
+    {
+        "station_number":3068,
+        "station_name":"Grand & 3rd",
+        "station_region":"DTLA",
+        "net_flux":-14343
+    }
+]
