@@ -3,6 +3,17 @@ import json
 # Import OR-Tools and your routing logic here...
 
 class handler(BaseHTTPRequestHandler):
+
+    def do_GET(self):
+        """Handle standard browser requests gracefully."""
+        self.send_response(200)
+        self.send_header('Content-type', 'application/json')
+        self.end_headers()
+        self.wfile.write(json.dumps({
+            'status': 'API is running successfully!', 
+            'message': 'Please send POST requests with truck parameters to calculate routes.'
+        }).encode('utf-8'))
+    
     def do_POST(self):
         # 1. Read the inputs sent from the frontend
         content_length = int(self.headers['Content-Length'])
