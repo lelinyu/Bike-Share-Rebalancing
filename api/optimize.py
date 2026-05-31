@@ -60,7 +60,6 @@ class handler(BaseHTTPRequestHandler):
 
         safe_matrix = np.nan_to_num(time_matrix, nan=999999) 
         
-        # 4. Build dynamic demands and penalties
         demands = []
         penalties = []
         for node in range(len(stations)):
@@ -70,23 +69,16 @@ class handler(BaseHTTPRequestHandler):
                 continue
                 
             try:
-                # Get the true historical flux
                 raw_flux = stations[node]['flux_profiles'][target_day][target_time]
             except KeyError:
                 raw_flux = 0
                 
-            # --- THE MAGIC FIX: CAPACITY CAPPING ---
-            # We force the demand to stay within the physical limits of the truck
-            # Example: If raw_flux is 50, but capacity is 20, capped_flux becomes 20.
-            # Example: If raw_flux is -35, but capacity is 20, capped_flux becomes -20.
+            # Capacity Capping: Force demand to fit in the truck
             capped_flux = max(min(raw_flux, truck_capacity), -truck_capacity)
             demands.append(capped_flux)
             
-            # We still penalize the AI using the RAW flux. 
-            # This ensures the AI prioritizes a massive station (flux 50) over a small one (flux 20), 
-            # even though it can only take 20 bikes from either!
+            # Penalty based on raw flux so the AI prioritizes massive shortages
             penalties.append(int(abs(raw_flux) * 10000))
-            # ---------------------------------------
 
         data = {
             'time_matrix': safe_matrix.astype(int).tolist(),
@@ -126,13 +118,18 @@ class handler(BaseHTTPRequestHandler):
             0, data['vehicle_capacity'], False, 'Capacity'
         )
 
+        # --- THE BUG FIX IS HERE ---
         for node in range(len(data['time_matrix'])):
             if node == data['depot']: continue
-            if penalties[node] > 0:
-                routing.AddDisjunction([manager.NodeToIndex(node)], penalties[node])
+            
+            # By removing the "if penalties > 0" check, we guarantee EVERY station is optional.
+            # Stations with 0 bikes get a 0 penalty and are instantly, safely ignored.
+            routing.AddDisjunction([manager.NodeToIndex(node)], penalties[node])
+        # ---------------------------
 
         search_parameters = pywrapcp.DefaultRoutingSearchParameters()
-        search_parameters.first_solution_strategy = routing_enums_pb2.FirstSolutionStrategy.PATH_CHEAPEST_ARC
+        # Upgraded to SAVINGS algorithm, which is heavily optimized for capacity constraints
+        search_parameters.first_solution_strategy = routing_enums_pb2.FirstSolutionStrategy.SAVINGS
         search_parameters.local_search_metaheuristic = routing_enums_pb2.LocalSearchMetaheuristic.GUIDED_LOCAL_SEARCH
         search_parameters.time_limit.seconds = 3 
 
