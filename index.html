@@ -20,6 +20,7 @@
             gap: 15px;
             align-items: center;
             border-bottom: 2px solid #ddd;
+            flex-wrap: wrap; /* Allows wrapping on smaller screens */
         }
         button {
             padding: 8px 16px;
@@ -34,7 +35,6 @@
             background-color: #0051a8;
         }
         
-        /* The CSS Animation for the moving truck lines */
         .flowing-route {
             stroke-dasharray: 15 15; 
             animation: flow 1s linear infinite; 
@@ -85,70 +85,66 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     
     <script>
-        // 1. Initialize the map centered on Los Angeles
         var map = L.map('map').setView([34.0522, -118.2437], 12);
         
-        // Use a dark theme map to make the bright route lines pop
         L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
             attribution: '&copy; <a href="https://carto.com/">CARTO</a>'
         }).addTo(map);
 
-        // 2. The main function triggered when the button is clicked
         async function calculateRoute() {
+            const day = document.getElementById('day').value;
+            const time_block = document.getElementById('time_block').value;
+            const capacity = document.getElementById('capacity').value;
             const trucks = document.getElementById('trucks').value;
             const minutes = document.getElementById('minutes').value;
 
             try {
-                // Send the data to your Python Backend
                 const response = await fetch('/api/optimize', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ 
+                        day: day,
+                        time_block: time_block,
+                        capacity: parseInt(capacity),
                         trucks: parseInt(trucks), 
                         minutes: parseInt(minutes) 
                     })
                 });
                 
-                // SAFETY CHECK: If Python crashes, show the error on screen!
                 if (!response.ok) {
                     const errorText = await response.text();
                     alert("🚨 Backend Error:\n" + errorText);
                     return; 
                 }
                 
-                // Parse the JSON returned by Python
                 const data = await response.json();
                 
-                // Clear old lines AND old markers from previous clicks
+                // Clear old layers
                 map.eachLayer((layer) => {
-                    if (layer instanceof L.Polyline || layer instanceof L.GeoJSON || layer instanceof L.Marker) { 
+                    if (layer instanceof L.Polyline || layer instanceof L.GeoJSON || layer instanceof L.Marker || layer instanceof L.CircleMarker) { 
                         layer.remove(); 
                     }
                 });
 
-                // Distinct colors for different truck routes
                 const colors = ['#ff0044', '#00e676', '#00d2ff', '#ffb300', '#b100ff', '#ff7b00'];
                 let allBounds = L.latLngBounds();
 
-                // Check if any routes were actually returned
                 if (data.routes && data.routes.length > 0) {
                     
-                    // --- Add a Marker for the Origin/Depot ---
-                    // Grab the very first coordinate from the very first truck
-                    const startLon = data.routes[0][0][0];
-                    const startLat = data.routes[0][0][1];
+                    // Central Depot Marker
+                    const startLon = data.routes[0][0].coords[0];
+                    const startLat = data.routes[0][0].coords[1];
                     
                     L.marker([startLat, startLon]).addTo(map)
                         .bindPopup("<b>📦 Central Depot</b><br>Truck Origin & Final Destination")
                         .openPopup();
 
-                    // Loop through each truck's route
                     for (let i = 0; i < data.routes.length; i++) {
                         const truckRoute = data.routes[i];
                         const routeColor = colors[i % colors.length];
 
-                        // Format coordinates for OSRM (lon,lat;lon,lat...)
-                        const coordString = truckRoute.map(coord => `${coord[0]},${coord[1]}`).join(';');
+                        // Extract coordinates for the OSRM routing string
+                        const coordString = truckRoute.map(stop => `${stop.coords[0]},${stop.coords[1]}`).join(';');
                         const osrmUrl = `https://router.project-osrm.org/route/v1/driving/${coordString}?overview=full&geometries=geojson`;
                         
                         try {
@@ -158,31 +154,60 @@
                             if (osrmData.code === 'Ok') {
                                 const roadGeometry = osrmData.routes[0].geometry;
                                 
-                                // Draw the road-snapped GeoJSON route WITH the CSS Animation
                                 const geoJsonLayer = L.geoJSON(roadGeometry, {
-                                    style: { 
-                                        color: routeColor, 
-                                        weight: 6, 
-                                        opacity: 0.9,
-                                        className: 'flowing-route' // Applies the marching ants animation
-                                    }
+                                    style: { color: routeColor, weight: 6, opacity: 0.9, className: 'flowing-route' }
                                 }).addTo(map);
                                 
                                 allBounds.extend(geoJsonLayer.getBounds());
                             } else {
-                                console.warn("OSRM couldn't snap this route. Drawing straight lines instead.");
-                                const latLngs = truckRoute.map(coord => [coord[1], coord[0]]);
+                                const latLngs = truckRoute.map(stop => [stop.coords[1], stop.coords[0]]);
                                 const fallbackLine = L.polyline(latLngs, {
                                     color: routeColor, weight: 5, opacity: 0.8, className: 'flowing-route'
                                 }).addTo(map);
                                 allBounds.extend(fallbackLine.getBounds());
                             }
+                            
+                            // --- NEW: Add Station Map Pins ---
+                            truckRoute.forEach((stop, stopIndex) => {
+                                // Skip placing standard pins on the Depot (first and last stop)
+                                if (stopIndex !== 0 && stopIndex !== truckRoute.length - 1) {
+                                    
+                                    // Determine the action text (Pickup vs Dropoff)
+                                    let actionText = "";
+                                    if (stop.flux > 0) {
+                                        actionText = `🟢 Picking up <b>${stop.flux}</b> bikes`;
+                                    } else if (stop.flux < 0) {
+                                        actionText = `🔴 Dropping off <b>${Math.abs(stop.flux)}</b> bikes`;
+                                    } else {
+                                        actionText = `⚪ No bikes exchanged`;
+                                    }
+
+                                    // Add a circle marker filled with the truck's color
+                                    L.circleMarker([stop.coords[1], stop.coords[0]], {
+                                        radius: 7,
+                                        fillColor: routeColor,
+                                        color: '#ffffff', // White border
+                                        weight: 2,
+                                        opacity: 1,
+                                        fillOpacity: 1
+                                    }).addTo(map)
+                                    .bindPopup(`
+                                        <div style="font-size: 14px;">
+                                            <b>📍 Station ${stop.station_id}</b><br>
+                                            <hr style="margin: 5px 0;">
+                                            🚚 Served by: <b>Truck ${i + 1}</b><br>
+                                            ${actionText}
+                                        </div>
+                                    `);
+                                }
+                            });
+                            // ---------------------------------
+
                         } catch (err) {
                             console.error("Failed to fetch street data from OSRM:", err);
                         }
                     }
 
-                    // Zoom and pan the map to perfectly fit all the routes
                     if (allBounds.isValid()) {
                         map.fitBounds(allBounds, { padding: [20, 20] });
                     }
@@ -192,7 +217,6 @@
                 }
 
             } catch (error) {
-                // Catch network errors (e.g., if Vercel is offline)
                 alert("🚨 Network Error: Could not connect to the backend API.");
                 console.error(error);
             }

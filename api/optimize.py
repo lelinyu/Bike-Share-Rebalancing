@@ -73,11 +73,10 @@ class handler(BaseHTTPRequestHandler):
             except KeyError:
                 raw_flux = 0
                 
-            # Capacity Capping: Force demand to fit in the truck
+            # Capacity Capping
             capped_flux = max(min(raw_flux, truck_capacity), -truck_capacity)
             demands.append(capped_flux)
             
-            # Penalty based on raw flux so the AI prioritizes massive shortages
             penalties.append(int(abs(raw_flux) * 10000))
 
         data = {
@@ -118,17 +117,11 @@ class handler(BaseHTTPRequestHandler):
             0, data['vehicle_capacity'], False, 'Capacity'
         )
 
-        # --- THE BUG FIX IS HERE ---
         for node in range(len(data['time_matrix'])):
             if node == data['depot']: continue
-            
-            # By removing the "if penalties > 0" check, we guarantee EVERY station is optional.
-            # Stations with 0 bikes get a 0 penalty and are instantly, safely ignored.
             routing.AddDisjunction([manager.NodeToIndex(node)], penalties[node])
-        # ---------------------------
 
         search_parameters = pywrapcp.DefaultRoutingSearchParameters()
-        # Upgraded to SAVINGS algorithm, which is heavily optimized for capacity constraints
         search_parameters.first_solution_strategy = routing_enums_pb2.FirstSolutionStrategy.SAVINGS
         search_parameters.local_search_metaheuristic = routing_enums_pb2.LocalSearchMetaheuristic.GUIDED_LOCAL_SEARCH
         search_parameters.time_limit.seconds = 3 
@@ -144,13 +137,28 @@ class handler(BaseHTTPRequestHandler):
                 
                 while not routing.IsEnd(index):
                     node_index = manager.IndexToNode(index)
+                    
+                    # --- NEW: Extract detailed info for the frontend popup ---
                     lon = stations[node_index]['lon']
                     lat = stations[node_index]['lat']
-                    truck_route.append([lon, lat])
+                    station_id = stations[node_index].get('station_id', 'Depot')
+                    flux = demands[node_index]
+                    
+                    truck_route.append({
+                        "coords": [lon, lat],
+                        "station_id": station_id,
+                        "flux": flux
+                    })
+                    # ---------------------------------------------------------
+                    
                     index = solution.Value(routing.NextVar(index))
                 
                 depot_node = manager.IndexToNode(index)
-                truck_route.append([stations[depot_node]['lon'], stations[depot_node]['lat']])
+                truck_route.append({
+                    "coords": [stations[depot_node]['lon'], stations[depot_node]['lat']],
+                    "station_id": "Depot",
+                    "flux": 0
+                })
                 
                 if len(truck_route) > 2:
                     all_routes.append(truck_route)
