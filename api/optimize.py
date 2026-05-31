@@ -43,13 +43,15 @@ class handler(BaseHTTPRequestHandler):
         post_data = self.rfile.read(content_length)
         user_inputs = json.loads(post_data)
         
-        minutes_allowed = int(user_inputs.get('minutes', 60))
-        num_trucks = int(user_inputs.get('trucks', 1))
+        # 2. Extract standard and dynamic parameters
+        minutes_allowed = int(user_inputs.get('minutes', 120))
+        num_trucks = int(user_inputs.get('trucks', 3))
+        truck_capacity = int(user_inputs.get('capacity', 20))
+        target_day = user_inputs.get('day', 'Monday')
+        target_time = user_inputs.get('time_block', '06:00-09:00')
         
-        # 2. Load your pre-saved JSON data
-        # We use os.path to safely locate the JSON files in the same directory as this script
+        # 3. Load your pre-saved JSON data
         base_dir = os.path.dirname(os.path.abspath(__file__))
-        
         try:
             with open(os.path.join(base_dir, 'matrix.json'), 'r') as f:
                 time_matrix = json.load(f)
@@ -59,19 +61,42 @@ class handler(BaseHTTPRequestHandler):
             self.send_error(500, f"Error loading data files: {str(e)}")
             return
 
-        # 3. Run the OR-Tools Routing code
         safe_matrix = np.nan_to_num(time_matrix, nan=999999) 
+        
+        # 4. Build dynamic demands and penalties for this specific hour block
+        demands = []
+        penalties = []
+        for node in range(len(stations)):
+            if node == 0:  # Depot
+                demands.append(0)
+                penalties.append(0)
+                continue
+                
+            try:
+                # Extract the historical flux. If no rides happened, default to 0.
+                flux = stations[node]['flux_profiles'][target_day][target_time]
+            except KeyError:
+                flux = 0
+                
+            demands.append(flux)
+            # We only heavily penalize the AI if it skips a station that actually needs rebalancing right now
+            penalties.append(int(abs(flux) * 10000))
+
         data = {
             'time_matrix': safe_matrix.astype(int).tolist(),
+            'demands': demands,
             'num_vehicles': num_trucks,
-            'depot': 0, # Assuming first station is the depot
+            'vehicle_capacity': truck_capacity,
+            'depot': 0, 
             'max_time_seconds': int(minutes_allowed * 60),
             'service_time_seconds': int(SERVICE_TIME_MINUTES * 60)
         }
 
+        # 5. Initialize OR-Tools
         manager = pywrapcp.RoutingIndexManager(len(data['time_matrix']), data['num_vehicles'], data['depot'])
         routing = pywrapcp.RoutingModel(manager)
 
+        # --- TIME DIMENSION ---
         def time_callback(from_index, to_index):
             from_node = manager.IndexToNode(from_index)
             to_node = manager.IndexToNode(to_index)
@@ -84,28 +109,44 @@ class handler(BaseHTTPRequestHandler):
 
         routing.AddDimension(
             transit_callback_index,
-            0,
+            0, # No slack allowed for time
             data['max_time_seconds'],
-            True,
+            True, # Start time at zero
             'Time'
         )
 
-        # Add Penalties for skipping (based on flux)
+        # --- CAPACITY DIMENSION ---
+        def demand_callback(from_index):
+            from_node = manager.IndexToNode(from_index)
+            # Returns positive for pickups (surplus at station), negative for drop-offs (deficit at station)
+            return data['demands'][from_node]
+
+        demand_callback_index = routing.RegisterUnaryTransitCallback(demand_callback)
+        routing.AddDimension(
+            demand_callback_index,
+            0, # No slack required for capacity
+            data['vehicle_capacity'], 
+            False, # FALSE allows the AI to choose the optimal starting truck load at the depot!
+            'Capacity'
+        )
+
+        # --- PENALTIES ---
         for node in range(len(data['time_matrix'])):
             if node == data['depot']: continue
-            # Handle potential dict structures if pandas exported to JSON records
-            flux = stations[node]['net_flux'] if isinstance(stations[node], dict) else stations[node][1] 
-            penalty = int(abs(flux) * 10000)
-            routing.AddDisjunction([manager.NodeToIndex(node)], penalty)
+            # Only force the AI to consider nodes that actually have a bike flux this hour
+            if penalties[node] > 0:
+                routing.AddDisjunction([manager.NodeToIndex(node)], penalties[node])
 
+        # 6. Search Parameters
         search_parameters = pywrapcp.DefaultRoutingSearchParameters()
         search_parameters.first_solution_strategy = routing_enums_pb2.FirstSolutionStrategy.PATH_CHEAPEST_ARC
         search_parameters.local_search_metaheuristic = routing_enums_pb2.LocalSearchMetaheuristic.GUIDED_LOCAL_SEARCH
-        search_parameters.time_limit.seconds = 3 # Keep it fast for the web!
+        search_parameters.time_limit.seconds = 3 # Keep it fast for the web interface
 
+        # 7. Solve
         solution = routing.SolveWithParameters(search_parameters)
 
-        # 4. Format the output as a list of GPS routes
+        # 8. Format the output as a list of GPS routes
         all_routes = []
         
         if solution:
@@ -115,7 +156,7 @@ class handler(BaseHTTPRequestHandler):
                 
                 while not routing.IsEnd(index):
                     node_index = manager.IndexToNode(index)
-                    # Extract Longitude and Latitude for this station
+                    # Extract Longitude and Latitude using the new nested JSON structure
                     lon = stations[node_index]['lon']
                     lat = stations[node_index]['lat']
                     truck_route.append([lon, lat])
@@ -129,10 +170,9 @@ class handler(BaseHTTPRequestHandler):
                 if len(truck_route) > 2:
                     all_routes.append(truck_route)
 
-        # 5. Send the data back to the frontend
+        # 9. Send the data back to the frontend
         self.send_response(200)
         self.send_header('Content-type', 'application/json')
         self.end_headers()
         
-        # We send back an array of routes (since we have multiple trucks)
         self.wfile.write(json.dumps({'routes': all_routes}).encode('utf-8'))
