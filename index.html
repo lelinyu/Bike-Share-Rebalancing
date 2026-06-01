@@ -23,9 +23,8 @@
             flex-wrap: wrap; 
         }
         
-        /* --- NEW: Styling for the Stats Dashboard --- */
         .stats-panel {
-            display: none; /* Hidden by default until a route is calculated */
+            display: none; 
             background-color: #e3f2fd;
             padding: 15px 20px;
             border-bottom: 2px solid #90caf9;
@@ -42,7 +41,6 @@
             border-radius: 20px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        /* ------------------------------------------- */
 
         button {
             padding: 8px 16px;
@@ -52,7 +50,7 @@
             border-radius: 4px;
             cursor: pointer;
             font-weight: bold;
-            margin-left: auto; /* Pushes the button to the right */
+            margin-left: auto; 
         }
         button:hover {
             background-color: #0051a8;
@@ -104,6 +102,7 @@
     </div>
 
     <div id="stats-panel" class="stats-panel"></div>
+
     <div id="map"></div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -111,7 +110,8 @@
     <script>
         var map = L.map('map').setView([34.0522, -118.2437], 12);
         
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+        // --- UPDATED MAP LAYER (Light Theme) ---
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
             attribution: '&copy; <a href="https://carto.com/">CARTO</a>'
         }).addTo(map);
 
@@ -123,7 +123,7 @@
             const minutes = document.getElementById('minutes').value;
             
             const statsPanel = document.getElementById('stats-panel');
-            statsPanel.style.display = 'none'; // Hide stats while calculating
+            statsPanel.style.display = 'none'; 
 
             try {
                 const response = await fetch('/api/optimize', {
@@ -146,23 +146,21 @@
                 
                 const data = await response.json();
                 
-                // Clear old layers
                 map.eachLayer((layer) => {
                     if (layer instanceof L.Polyline || layer instanceof L.GeoJSON || layer instanceof L.Marker || layer instanceof L.CircleMarker) { 
                         layer.remove(); 
                     }
                 });
 
-                const colors = ['#ff0044', '#00e676', '#00d2ff', '#ffb300', '#b100ff', '#ff7b00'];
+                // Slightly darker colors look better on a white map!
+                const colors = ['#e60000', '#009933', '#0066cc', '#e68a00', '#9900cc', '#cc6600'];
                 let allBounds = L.latLngBounds();
 
                 if (data.routes && data.routes.length > 0) {
                     
-                    // --- NEW: Calculate Total Metrics ---
                     let totalPickups = 0;
                     let totalDropoffs = 0;
 
-                    // Loop through every stop on every truck to aggregate the math
                     data.routes.forEach(route => {
                         route.forEach(stop => {
                             if (stop.flux > 0) {
@@ -175,7 +173,6 @@
 
                     const totalSatisfied = totalPickups + totalDropoffs;
 
-                    // Update the HTML and reveal the banner
                     statsPanel.innerHTML = `
                         <div class="stat-item">🟢 Bikes Picked Up: <b>${totalPickups}</b></div>
                         <div class="stat-item">🔴 Bikes Dropped Off: <b>${totalDropoffs}</b></div>
@@ -183,9 +180,7 @@
                         <div class="stat-item">🚚 Active Trucks: <b>${data.routes.length}</b></div>
                     `;
                     statsPanel.style.display = 'flex';
-                    // ------------------------------------
                     
-                    // Central Depot Marker
                     const startLon = data.routes[0][0].coords[0];
                     const startLat = data.routes[0][0].coords[1];
                     
@@ -197,7 +192,6 @@
                         const truckRoute = data.routes[i];
                         const routeColor = colors[i % colors.length];
 
-                        // Extract coordinates for the OSRM routing string
                         const coordString = truckRoute.map(stop => `${stop.coords[0]},${stop.coords[1]}`).join(';');
                         const osrmUrl = `https://router.project-osrm.org/route/v1/driving/${coordString}?overview=full&geometries=geojson`;
                         
@@ -221,9 +215,7 @@
                                 allBounds.extend(fallbackLine.getBounds());
                             }
                             
-                            // Add Station Map Pins
                             truckRoute.forEach((stop, stopIndex) => {
-                                // Skip placing standard pins on the Depot (first and last stop)
                                 if (stopIndex !== 0 && stopIndex !== truckRoute.length - 1) {
                                     
                                     let actionText = "";
@@ -238,7 +230,7 @@
                                     L.circleMarker([stop.coords[1], stop.coords[0]], {
                                         radius: 7,
                                         fillColor: routeColor,
-                                        color: '#ffffff', // White border
+                                        color: '#ffffff', 
                                         weight: 2,
                                         opacity: 1,
                                         fillOpacity: 1
