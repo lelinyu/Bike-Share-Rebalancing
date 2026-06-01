@@ -10,7 +10,7 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
         #map { 
-            height: 85vh; 
+            height: 80vh; 
             width: 100%; 
         }
         .controls { 
@@ -19,9 +19,31 @@
             display: flex;
             gap: 15px;
             align-items: center;
-            border-bottom: 2px solid #ddd;
-            flex-wrap: wrap; /* Allows wrapping on smaller screens */
+            border-bottom: 1px solid #ddd;
+            flex-wrap: wrap; 
         }
+        
+        /* --- NEW: Styling for the Stats Dashboard --- */
+        .stats-panel {
+            display: none; /* Hidden by default until a route is calculated */
+            background-color: #e3f2fd;
+            padding: 15px 20px;
+            border-bottom: 2px solid #90caf9;
+            font-size: 16px;
+            font-weight: 600;
+            color: #0d47a1;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .stat-item {
+            background: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        /* ------------------------------------------- */
+
         button {
             padding: 8px 16px;
             background-color: #0070f3;
@@ -30,6 +52,7 @@
             border-radius: 4px;
             cursor: pointer;
             font-weight: bold;
+            margin-left: auto; /* Pushes the button to the right */
         }
         button:hover {
             background-color: #0051a8;
@@ -69,17 +92,18 @@
         </select>
 
         <label for="capacity"><strong>Truck Capacity:</strong></label>
-        <input type="number" id="capacity" value="20" min="5" max="100">
+        <input type="number" id="capacity" value="20" min="5" max="100" style="width: 60px;">
 
         <label for="trucks"><strong>Trucks:</strong></label>
-        <input type="number" id="trucks" value="3" min="1" max="10">
+        <input type="number" id="trucks" value="3" min="1" max="10" style="width: 50px;">
         
         <label for="minutes"><strong>Time Limit:</strong></label>
-        <input type="number" id="minutes" value="120" min="10" max="480">
+        <input type="number" id="minutes" value="120" min="10" max="480" style="width: 60px;">
         
         <button onclick="calculateRoute()">Optimize Route</button>
     </div>
 
+    <div id="stats-panel" class="stats-panel"></div>
     <div id="map"></div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -97,6 +121,9 @@
             const capacity = document.getElementById('capacity').value;
             const trucks = document.getElementById('trucks').value;
             const minutes = document.getElementById('minutes').value;
+            
+            const statsPanel = document.getElementById('stats-panel');
+            statsPanel.style.display = 'none'; // Hide stats while calculating
 
             try {
                 const response = await fetch('/api/optimize', {
@@ -130,6 +157,33 @@
                 let allBounds = L.latLngBounds();
 
                 if (data.routes && data.routes.length > 0) {
+                    
+                    // --- NEW: Calculate Total Metrics ---
+                    let totalPickups = 0;
+                    let totalDropoffs = 0;
+
+                    // Loop through every stop on every truck to aggregate the math
+                    data.routes.forEach(route => {
+                        route.forEach(stop => {
+                            if (stop.flux > 0) {
+                                totalPickups += stop.flux;
+                            } else if (stop.flux < 0) {
+                                totalDropoffs += Math.abs(stop.flux);
+                            }
+                        });
+                    });
+
+                    const totalSatisfied = totalPickups + totalDropoffs;
+
+                    // Update the HTML and reveal the banner
+                    statsPanel.innerHTML = `
+                        <div class="stat-item">🟢 Bikes Picked Up: <b>${totalPickups}</b></div>
+                        <div class="stat-item">🔴 Bikes Dropped Off: <b>${totalDropoffs}</b></div>
+                        <div class="stat-item">✅ Total Demand Satisfied: <b>${totalSatisfied}</b></div>
+                        <div class="stat-item">🚚 Active Trucks: <b>${data.routes.length}</b></div>
+                    `;
+                    statsPanel.style.display = 'flex';
+                    // ------------------------------------
                     
                     // Central Depot Marker
                     const startLon = data.routes[0][0].coords[0];
@@ -167,12 +221,11 @@
                                 allBounds.extend(fallbackLine.getBounds());
                             }
                             
-                            // --- NEW: Add Station Map Pins ---
+                            // Add Station Map Pins
                             truckRoute.forEach((stop, stopIndex) => {
                                 // Skip placing standard pins on the Depot (first and last stop)
                                 if (stopIndex !== 0 && stopIndex !== truckRoute.length - 1) {
                                     
-                                    // Determine the action text (Pickup vs Dropoff)
                                     let actionText = "";
                                     if (stop.flux > 0) {
                                         actionText = `🟢 Picking up <b>${stop.flux}</b> bikes`;
@@ -182,7 +235,6 @@
                                         actionText = `⚪ No bikes exchanged`;
                                     }
 
-                                    // Add a circle marker filled with the truck's color
                                     L.circleMarker([stop.coords[1], stop.coords[0]], {
                                         radius: 7,
                                         fillColor: routeColor,
@@ -201,7 +253,6 @@
                                     `);
                                 }
                             });
-                            // ---------------------------------
 
                         } catch (err) {
                             console.error("Failed to fetch street data from OSRM:", err);
